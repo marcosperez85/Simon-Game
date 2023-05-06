@@ -1,0 +1,48 @@
+body {
+    background-color: #333;
+    height: 100%;
+}
+
+.shapeContainer {
+    position: relative;
+    top: 8vw;
+}
+
+.circleContainer {
+    width: 42vw;
+}
+
+.circuloGrande {
+    display: inline-block;
+    width: 20vw;
+    height: 20vw;
+}
+
+.circuloChico {
+    position: fixed;
+    width: 18vw;
+    height: 18vw;
+    background-color: #333;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-right-panel {
+    border-top-right-radius: 100%;
+    background: red;
+}
+
+.top-left-panel {
+    border-top-left-radius: 100%;
+    background: blue;
+}
+
+.bottom-right-panel {
+    border-bottom-right-radius: 100%;
+    background: green;
+}
+
+.bottom-left-panel {
+    border-bottom-left-radius: 100%;
+    background: yellow;
+}
