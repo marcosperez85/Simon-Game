@@ -27,6 +27,10 @@ body {
     height: var(--panel-width);
 }
 
+.circuloGrande:hover {
+    border: 3px solid white;
+}
+
 .circuloChico {
     display: grid;
     place-items: center;
