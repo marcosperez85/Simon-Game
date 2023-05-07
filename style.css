@@ -1,4 +1,5 @@
 :root {
+    --column-width: 32vw;
     --circle-container-width: 40vw;
     --small-circle-diameter: 18vw;
     --panel-width: 20vw;
@@ -17,9 +18,15 @@ body {
 
 .topBar {
     display: grid;
+    grid-template-columns: repeat(2, var(--column-width));
+    gap: 1vw;
+}
+
+.stateCol, .roundCol {
+    display: grid;
     place-items: center;
     height: 4vw;
-    width: 50vw;
+    width: var(--column-width);
     margin-top: 1vw;
     font-size: 2vw;
     background-color: var(--top-bar-color) ;
@@ -39,7 +46,6 @@ body {
 }
 
 .circuloGrande {
-    /* display: inline-table; */
     width: var(--panel-width);
     height: var(--panel-width);
 }
@@ -82,4 +88,12 @@ body {
 .bottom-left-panel {
     border-bottom-left-radius: 100%;
     background: yellow;
+}
+
+.opaque {
+    opacity: 0.7;
+}
+
+.bright {
+    opacity: 1;
 }
