@@ -1,25 +1,71 @@
 const $stateCol = document.querySelector(".stateCol");
 const $roundCol = document.querySelector(".roundCol");
-const $panel = document.querySelectorAll(".panel")
+let $panel = document.querySelectorAll(".circuloGrande");
 const $startBtn = document.querySelector("button");
 
 let machineSequence = [];
 let userSequence = [];
 let round = 0;
 
+blockUserInput();
+updateStateCol("Press Play to start the game");
+
 $startBtn.onclick = function () {
     restartGame();
-    updateStateCol("Computer's turn");
-    blockUserInput();
     roundHandler();
+}
 
+function handleUserInput(e) {
+    const clickedPanel = e.target;
+
+    highlightPanel(clickedPanel)
+    userSequence.push = clickedPanel;
+}
+
+function highlightPanel(panel) {
+    panel.style.opacity = 1;
+}
+
+function restartGame() {
+    machineSequence = [];
+    userSequence = [];
+    round = 0;
+}
+
+function updateStateCol(gameState) {
+    $stateCol.textContent = gameState;
+}
+
+function updateRoundCol(round) {
+    $roundCol.innerText = "Round: " + round;
+}
+
+function blockUserInput() {
+    $panel.forEach(function (elem) {
+        elem.onclick = function () {/*Empty function to indicate that nothing should happen */ }
+    })
+}
+
+function unblockUserInput() {
+    $panel.forEach(function (elem) {
+        elem.onclick = handleUserInput;
+    })
+}
+
+function roundHandler() {
+    updateStateCol("Computer's turn");
+    const newPanel = createRandomNumber();
+    machineSequence.push(newPanel)
+
+    // Create a one second delay for each PC movement plus one additional second
     const userDelay = (machineSequence.length + 1) * 1000;
 
+    // Call the highlightPanel function after one second for each element in the PC array
     machineSequence.forEach(function (elem, index) {
         const delay_ms = (index + 1) * 1000;
         setTimeout(function () {
             highlightPanel(elem)
-        },  delay_ms)
+        }, delay_ms)
     })
 
     setTimeout(function () {
@@ -32,49 +78,12 @@ $startBtn.onclick = function () {
     updateRoundCol(round);
 }
 
-function handleUserInput(e) {
-    const clickedPanel = e.target;
-    highlightPanel(clickedPanel)
-}
-
-function highlightPanel(panel) {
-    panel.className = "bright"
-}
-
-function restartGame() {
-    machineSequence = [];
-    userSequence = [];
-}
-
-function updateStateCol(gameState) {
-    $stateCol.textContent = gameState;
-}
-
-function updateRoundCol(round) {
-    $roundCol.innerText = "Round: " + round;
-}
-
-function blockUserInput() {
-    $panel.forEach(function(elem) {
-        elem.onclick = function() {/*Empty function to indicate that nothing should happen */ }
-    })
-}
-
-function unblockUserInput() {
-    $panel.forEach(function(elem) {
-        elem.onclick = handleUserInput()
-    })
-}
-
-function roundHandler() {
-    const newPanel = createRandomNumber();
-    machineSequence.push(newPanel)
-}
-
 function createRandomNumber() {
-    return Math.floor(Math.random() * 4)
+    let panelNumber = Math.floor(Math.random() * 4)
+    return $panel[panelNumber];
 }
 
 function toLose() {
     updateStateCol("You lost. Press 'Play' to restart the game");
+    restartGame()
 }
