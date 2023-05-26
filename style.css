@@ -1,8 +1,8 @@
 :root {
     --column-width: 32vw;
-    --circle-container-width: 40vw;
-    --small-circle-diameter: 18vw;
-    --panel-width: 20vw;
+    --circle-container-width: 34vw;
+    --small-circle-diameter: 15vw;
+    --panel-width: 17vw;
     --color-fondo: #333;
     --color-fondo-hover: #555;
     --top-bar-color: #999;
@@ -42,7 +42,7 @@ body {
     grid-template-columns: repeat(2, var(--panel-width));
     grid-template-rows: repeat(2, var(--panel-width));
     width: var(--circle-container-width);
-    margin-top: 3vw;
+    margin-top: 4vw;
 }
 
 .circuloGrande {
@@ -59,9 +59,9 @@ body {
 .circuloChico {
     display: grid;
     place-items: center;
-    position: fixed;
+    position: absolute;
     color: white;
-    font-size: 5vw;    
+    font-size: 4vw;    
     width: var(--small-circle-diameter);
     height: var(--small-circle-diameter);
     background-color: var(--color-fondo);

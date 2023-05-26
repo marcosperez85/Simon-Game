@@ -36,11 +36,13 @@ function handleUserInput(e) {
 
 function highlightPanel(clickedPanel) {
     clickedPanel.style.opacity = 1;
+    clickedPanel.style.border = "3px solid white";
     setTimeout(downlight, 500, clickedPanel);
 }
 
 function downlight(clickedPanel) {
     clickedPanel.style.opacity = 0.5;
+    clickedPanel.style.border = "0px solid white";
 }
 
 function restartGame() {
@@ -100,6 +102,6 @@ function createRandomNumber() {
 }
 
 function toLose() {
-    updateStateCol("You lost. Press 'Play' to restart the game");
+    updateStateCol("You lost. Press PLAY to restart");
     restartGame()
 }
