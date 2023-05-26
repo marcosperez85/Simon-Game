@@ -18,7 +18,20 @@ $startBtn.onclick = function () {
 function handleUserInput(e) {
     const clickedPanel = e.target;
     highlightPanel(clickedPanel)
-    userSequence.push = clickedPanel;
+    userSequence.push(clickedPanel);
+
+    // Create a temporary machinePanel with the latest input from the user
+    const machinePanel = machineSequence[userSequence.length - 1];
+    if (clickedPanel.id !== machinePanel.id) {
+        toLose();
+        return;
+    }
+
+    // This condition is only met once the user has passed the previous conditon for all PC panels
+    if (userSequence.length == machineSequence.length) {
+        blockUserInput();
+        setTimeout(roundHandler, 1000);
+    }
 }
 
 function highlightPanel(clickedPanel) {
@@ -65,16 +78,17 @@ function roundHandler() {
     const userDelay = (machineSequence.length + 1) * 1000;
 
     // Call the highlightPanel function after one second for each element in the PC array
-    machineSequence.forEach(function (panel, index) {
+    machineSequence.forEach(function(panel, index) {
         const delay_ms = (index + 1) * 1000;
         setTimeout(highlightPanel, delay_ms, panel);
     })
 
     setTimeout(function () {
-        unblockUserInput();
         updateStateCol("User's turn");
+        unblockUserInput();
     }, userDelay)
 
+    // User's sequence always has to be reset after each round.
     userSequence = [];
     round++
     updateRoundCol(round);
