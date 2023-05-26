@@ -1,6 +1,6 @@
 const $stateCol = document.querySelector(".stateCol");
 const $roundCol = document.querySelector(".roundCol");
-let $panel = document.querySelectorAll(".circuloGrande");
+const $panel = document.querySelectorAll(".circuloGrande");
 const $startBtn = document.querySelector("button");
 
 let machineSequence = [];
@@ -17,13 +17,17 @@ $startBtn.onclick = function () {
 
 function handleUserInput(e) {
     const clickedPanel = e.target;
-
     highlightPanel(clickedPanel)
     userSequence.push = clickedPanel;
 }
 
-function highlightPanel(panel) {
-    panel.style.opacity = 1;
+function highlightPanel(clickedPanel) {
+    clickedPanel.style.opacity = 1;
+    setTimeout(downlight, 500, clickedPanel);
+}
+
+function downlight(clickedPanel) {
+    clickedPanel.style.opacity = 0.5;
 }
 
 function restartGame() {
@@ -61,11 +65,9 @@ function roundHandler() {
     const userDelay = (machineSequence.length + 1) * 1000;
 
     // Call the highlightPanel function after one second for each element in the PC array
-    machineSequence.forEach(function (elem, index) {
+    machineSequence.forEach(function (panel, index) {
         const delay_ms = (index + 1) * 1000;
-        setTimeout(function () {
-            highlightPanel(elem)
-        }, delay_ms)
+        setTimeout(highlightPanel, delay_ms, panel);
     })
 
     setTimeout(function () {
