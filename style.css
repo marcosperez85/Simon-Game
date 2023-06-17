@@ -1,12 +1,15 @@
 :root {
-    --column-width: 32vw;
-    --circle-container-width: 34vw;
-    --small-circle-diameter: 15vw;
-    --panel-width: 17vw;
+    /* --column-width: 32vw; */
+    --column-width: 16em;
+    --column-height: 2em;
+    --circle-container-width: 78vmin;
+    --small-circle-diameter: 34vmin;
+    --panel-width: 39vmin;
     --color-fondo: #333;
     --color-fondo-hover: #555;
     --top-bar-color: #999;
     --top-bar-border-radius: 1vw;
+    --font-size-top-bar: 1em;
 }
 
 body {
@@ -17,18 +20,23 @@ body {
 }
 
 .topBar {
-    display: grid;
-    grid-template-columns: repeat(2, var(--column-width));
+    display: flex;
+    flex-flow: row wrap;
+    /* grid-template-columns: repeat(2, var(--column-width)); */
+    align-items: center;
+    justify-content: center;
     gap: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    /* border: 1px solid red; */
 }
 
 .stateCol, .roundCol {
     display: grid;
     place-items: center;
-    height: 4vw;
+    height: var(--column-height);
     width: var(--column-width);
-    margin-top: 1vw;
-    font-size: 2vw;
+    font-size: var(--font-size-top-bar);
     background-color: var(--top-bar-color) ;
     border-top-left-radius: var(--top-bar-border-radius);
     border-top-right-radius: var(--top-bar-border-radius);
