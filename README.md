@@ -33,3 +33,12 @@ When a new version is released:
 
 1. The PWA will automatically update when you visit it again if the `CACHE_NAME` value in the service-worker.js file has been changed
 2. If you're developing this app, increment the `CACHE_NAME` variable (e.g., from "simon-game-v1" to "simon-game-v2") to ensure users receive the updated files
+
+## Removing the PWA from iPhone
+
+To delete the Simon Game PWA from your iPhone:
+
+1. Press and hold the app icon on your home screen
+2. Tap "Delete App" when it appears
+3. Confirm by tapping "Delete" in the popup dialog
+4. This will remove the app from your home screen, but your browser cache may still store some data.
