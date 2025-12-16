@@ -73,6 +73,7 @@ body {
     width: var(--small-circle-diameter);
     height: var(--small-circle-diameter);
     background-color: var(--color-fondo);
+    border-radius: 50%;
 }
 
 .circuloChico:hover {
