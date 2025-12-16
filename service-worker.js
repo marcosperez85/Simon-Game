@@ -3,7 +3,7 @@ const FILES = [
   "/",
   "/index.html",
   "/styles.css",
-  "/game.js"
+  "/index.js"
 ];
 
 self.addEventListener("install", event => {
