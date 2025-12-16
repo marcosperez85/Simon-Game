@@ -105,3 +105,7 @@ function toLose() {
     updateStateCol("You lost. Press PLAY to restart");
     restartGame()
 }
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
