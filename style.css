@@ -45,6 +45,7 @@ body {
 }
 
 .circleContainer {
+    position: relative;
     display: grid;
     place-items: center;
     grid-template-columns: repeat(2, var(--panel-width));
@@ -65,15 +66,17 @@ body {
 }
 
 .circuloChico {
-    /* display: grid; */
-    /* place-items: center; */
     position: absolute;
+    top: 50%;          /* Position at the vertical center */
+    left: 50%;         /* Position at the horizontal center */
+    transform: translate(-50%, -50%); /* Offset by half the element's dimensions to truly center */
     color: white;
     font-size: 4vw;    
     width: var(--small-circle-diameter);
     height: var(--small-circle-diameter);
     background-color: var(--color-fondo);
     border-radius: 50%;
+    z-index: 1; /* Ensure the button is above the panels */
 }
 
 .circuloChico:hover {
