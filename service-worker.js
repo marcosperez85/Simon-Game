@@ -2,7 +2,7 @@ const CACHE_NAME = "simon-v1";
 const FILES = [
   "/",
   "/index.html",
-  "/styles.css",
+  "/style.css",
   "/index.js"
 ];
 
