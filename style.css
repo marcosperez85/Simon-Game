@@ -65,8 +65,8 @@ body {
 }
 
 .circuloChico {
-    display: grid;
-    place-items: center;
+    /* display: grid; */
+    /* place-items: center; */
     position: absolute;
     color: white;
     font-size: 4vw;    
