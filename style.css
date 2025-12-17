@@ -23,12 +23,11 @@ body {
 .topBar {
     display: flex;
     flex-flow: row wrap;
-    /* grid-template-columns: repeat(2, var(--column-width)); */
     align-items: center;
     justify-content: center;
     gap: 4vw;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
     /* border: 1px solid red; */
 }
 
@@ -53,8 +52,8 @@ body {
     grid-template-columns: repeat(2, var(--panel-width));
     grid-template-rows: repeat(2, var(--panel-width));
     width: var(--circle-container-width);
-    margin-top: 50vw;
-    transform: translate(0vw, -50vw);
+    margin-top: 2em;
+    /* transform: translate(0vw, -100vw); */
 }
 
 .circuloGrande {
