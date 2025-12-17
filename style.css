@@ -32,17 +32,18 @@ body {
     /* border: 1px solid red; */
 }
 
-.stateCol, .roundCol {
+.stateCol,
+.roundCol {
     display: grid;
     place-items: center;
     height: var(--column-height);
     width: var(--column-width);
     font-size: var(--font-size-top-bar);
-    background-color: var(--top-bar-color) ;
+    background-color: var(--top-bar-color);
     border-top-left-radius: var(--top-bar-border-radius);
     border-top-right-radius: var(--top-bar-border-radius);
     border-bottom-left-radius: var(--top-bar-border-radius);
-    border-bottom-right-radius: var(--top-bar-border-radius);    
+    border-bottom-right-radius: var(--top-bar-border-radius);
 }
 
 .circleContainer {
@@ -69,16 +70,20 @@ body {
 
 .circuloChico {
     position: absolute;
-    top: 50%;          /* Position at the vertical center */
-    left: 50%;         /* Position at the horizontal center */
-    transform: translate(-50%, -50%); /* Offset by half the element's dimensions to truly center */
+    top: 50%;
+    /* Position at the vertical center */
+    left: 50%;
+    /* Position at the horizontal center */
+    transform: translate(-50%, -50%);
+    /* Offset by half the element's dimensions to truly center */
     color: white;
-    font-size: var(--font-size-circulo-chico);    
+    font-size: var(--font-size-circulo-chico);
     width: var(--small-circle-diameter);
     height: var(--small-circle-diameter);
     background-color: var(--color-fondo);
     border-radius: 50%;
-    z-index: 1; /* Ensure the button is above the panels */
+    z-index: 1;
+    /* Ensure the button is above the panels */
 }
 
 .circuloChico:hover {
@@ -104,4 +109,31 @@ body {
 #bottom-left-panel {
     border-bottom-left-radius: 100%;
     background: yellow;
+}
+
+.game-over {
+    animation: shake 0.4s;
+    background-color: #8b0000;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
