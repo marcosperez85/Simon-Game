@@ -103,9 +103,14 @@ function createRandomNumber() {
 
 function toLose() {
     updateStateCol("You lost. Press PLAY to restart");
+    endGameVibration()
     restartGame()
 }
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
+}
+
+function endGameVibration() {
+    navigator.vibrate(200);
 }
