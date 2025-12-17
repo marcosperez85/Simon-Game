@@ -103,7 +103,7 @@ function createRandomNumber() {
 
 function toLose() {
     updateStateCol("You lost. Press PLAY to restart");
-    endGameVibration()
+    endGameFeedback()
     restartGame()
 }
 
@@ -111,6 +111,9 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
 
-function endGameVibration() {
-    navigator.vibrate(200);
+function endGameFeedback() {
+  document.body.classList.add("game-over");
+  setTimeout(() => {
+    document.body.classList.remove("game-over");
+  }, 500);
 }
