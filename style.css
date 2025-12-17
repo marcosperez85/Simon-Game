@@ -53,8 +53,8 @@ body {
     grid-template-columns: repeat(2, var(--panel-width));
     grid-template-rows: repeat(2, var(--panel-width));
     width: var(--circle-container-width);
-    margin-top: 50%;
-    transform: translate(0%, -50%);
+    margin-top: 50vw;
+    transform: translate(0vw, -50vw);
 }
 
 .circuloGrande {
