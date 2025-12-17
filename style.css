@@ -1,7 +1,7 @@
 :root {
     /* --column-width: 32vw; */
-    --column-width: 16em;
-    --column-height: 2em;
+    --column-width: 14em;
+    --column-height: 3.5em;
     --circle-container-width: 78vmin;
     --small-circle-diameter: 34vmin;
     --panel-width: 39vmin;
@@ -9,7 +9,8 @@
     --color-fondo-hover: #555;
     --top-bar-color: #999;
     --top-bar-border-radius: 1vw;
-    --font-size-top-bar: 1em;
+    --font-size-top-bar: 1.5em;
+    --font-size-circulo-chico: 2em;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
     /* grid-template-columns: repeat(2, var(--column-width)); */
     align-items: center;
     justify-content: center;
-    gap: 1vw;
+    gap: 4vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
     /* border: 1px solid red; */
@@ -51,7 +52,8 @@ body {
     grid-template-columns: repeat(2, var(--panel-width));
     grid-template-rows: repeat(2, var(--panel-width));
     width: var(--circle-container-width);
-    margin-top: 4vw;
+    margin-top: 50%;
+    transform: translate(0%, -50%);
 }
 
 .circuloGrande {
@@ -71,7 +73,7 @@ body {
     left: 50%;         /* Position at the horizontal center */
     transform: translate(-50%, -50%); /* Offset by half the element's dimensions to truly center */
     color: white;
-    font-size: 4vw;    
+    font-size: var(--font-size-circulo-chico);    
     width: var(--small-circle-diameter);
     height: var(--small-circle-diameter);
     background-color: var(--color-fondo);
