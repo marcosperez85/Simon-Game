@@ -1,9 +1,10 @@
-const CACHE_NAME = "simon-v8";
+const CACHE_NAME = "simon-v9";
 const FILES = [
   "./",
   "./index.html",
   "./style.css",
-  "./index.js"
+  "./index.js",
+  "./manifest.json"
 ];
 
 self.addEventListener("install", event => {
